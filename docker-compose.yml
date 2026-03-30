@@ -1,0 +1,21 @@
+services:
+  kokoro-fastapi:
+    image: ${KOKORO_FASTAPI_IMAGE:-ghcr.io/remsky/kokoro-fastapi-cpu:v0.2.4}
+    container_name: storayboat-kokoro-fastapi
+    restart: unless-stopped
+    ports:
+      - "${KOKORO_FASTAPI_PORT:-8880}:8880"
+
+  storayboat-tts-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: storayboat-tts-gateway
+    restart: unless-stopped
+    depends_on:
+      - kokoro-fastapi
+    environment:
+      KOKORO_FASTAPI_BASE_URL: ${KOKORO_FASTAPI_BASE_URL:-http://kokoro-fastapi:8880}
+      KOKORO_FASTAPI_TIMEOUT: ${KOKORO_FASTAPI_TIMEOUT:-120}
+    ports:
+      - "${STORAYBOAT_PORT:-5051}:5051"

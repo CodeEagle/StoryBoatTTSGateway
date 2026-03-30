@@ -36,6 +36,26 @@ docker run -p 8880:8880 ghcr.io/remsky/kokoro-fastapi-cpu:latest
 export KOKORO_FASTAPI_BASE_URL=http://127.0.0.1:8880
 ```
 
+## 一体化启动
+
+现在仓库里已经把 `Kokoro-FastAPI` 一并集成进来了，最省事的启动方式是直接用 Docker Compose：
+
+```bash
+cp .env.example .env
+docker compose up --build
+```
+
+启动后：
+
+- 网关：`http://127.0.0.1:5051`
+- Kokoro-FastAPI：`http://127.0.0.1:8880`
+
+相关文件：
+
+- [docker-compose.yml](/Users/lincoln/Develop/GitHub/StorayBoatTTSGateway/docker-compose.yml)
+- [Dockerfile](/Users/lincoln/Develop/GitHub/StorayBoatTTSGateway/Dockerfile)
+- [.env.example](/Users/lincoln/Develop/GitHub/StorayBoatTTSGateway/.env.example)
+
 ## 启动
 
 ```bash
@@ -141,6 +161,12 @@ curl -X POST http://127.0.0.1:5051/v1/audio/speech_bundle \
   默认 `http://127.0.0.1:8880`
 - `KOKORO_FASTAPI_TIMEOUT`
   默认 `120`
+- `KOKORO_FASTAPI_IMAGE`
+  默认 `ghcr.io/remsky/kokoro-fastapi-cpu:v0.2.4`
+- `KOKORO_FASTAPI_PORT`
+  默认 `8880`
+- `STORAYBOAT_PORT`
+  默认 `5051`
 
 ## 说明
 

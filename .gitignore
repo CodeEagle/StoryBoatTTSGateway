@@ -5,5 +5,4 @@ __pycache__/
 *.pyc
 dist/
 build/
-kokoro-v1.0.onnx
-voices-v1.0.bin
+.env
