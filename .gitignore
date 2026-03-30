@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+dist/
+build/
+kokoro-v1.0.onnx
+voices-v1.0.bin
