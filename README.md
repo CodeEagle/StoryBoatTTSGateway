@@ -1,4 +1,4 @@
-# PaperBoat TTS Gateway
+# StorayBoat TTS Gateway
 
 一个独立的 FastAPI 网关，把 `Edge TTS` 和 `Kokoro` 统一成一套适合 `PaperBoat` / `Custom API` 接入的协议。
 
