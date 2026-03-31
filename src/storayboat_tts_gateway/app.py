@@ -28,7 +28,7 @@ from .api_models import (
 from .providers.edge_provider import EdgeProvider, OPENAI_VOICE_ALIASES
 from .providers.kokoro_provider import KokoroProvider
 
-app = FastAPI(title="StorayBoat TTS Gateway", version="0.2.0")
+app = FastAPI(title="StorayBoat TTS Gateway", version="0.2.1")
 
 providers = {
     ProviderName.EDGE: EdgeProvider(),

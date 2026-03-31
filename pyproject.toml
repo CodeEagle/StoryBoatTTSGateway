@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "storayboat-tts-gateway"
-version = "0.2.0"
+version = "0.2.1"
 description = "Unified TTS gateway for Edge TTS and Kokoro with word-level timing support."
 readme = "README.md"
 requires-python = ">=3.11"
