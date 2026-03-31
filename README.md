@@ -1,4 +1,4 @@
-# StorayBoat TTS Gateway
+# StoryBoat TTS Gateway
 
 一个独立的 FastAPI 网关，把 `Edge TTS` 和 `Kokoro` 统一成一套通用协议。
 
@@ -17,7 +17,7 @@
 ## 安装
 
 ```bash
-cd /Users/lincoln/Develop/GitHub/StorayBoatTTSGateway
+cd /Users/lincoln/Develop/GitHub/StoryBoatTTSGateway
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e '.[dev]'
@@ -53,14 +53,14 @@ docker compose up --build
 
 相关文件：
 
-- [docker-compose.yml](/Users/lincoln/Develop/GitHub/StorayBoatTTSGateway/docker-compose.yml)
-- [Dockerfile](/Users/lincoln/Develop/GitHub/StorayBoatTTSGateway/Dockerfile)
-- [.env.example](/Users/lincoln/Develop/GitHub/StorayBoatTTSGateway/.env.example)
+- [docker-compose.yml](/Users/lincoln/Develop/GitHub/StoryBoatTTSGateway/docker-compose.yml)
+- [Dockerfile](/Users/lincoln/Develop/GitHub/StoryBoatTTSGateway/Dockerfile)
+- [.env.example](/Users/lincoln/Develop/GitHub/StoryBoatTTSGateway/.env.example)
 
 ## 启动
 
 ```bash
-storayboat-tts-gateway
+storyboat-tts-gateway
 ```
 
 默认监听：
@@ -169,7 +169,7 @@ curl -X POST http://127.0.0.1:5051/v1/audio/speech_bundle \
   默认 `ghcr.io/remsky/kokoro-fastapi-cpu:v0.2.4`
 - `KOKORO_FASTAPI_PORT`
   默认 `8880`
-- `STORAYBOAT_PORT`
+- `STORYBOAT_PORT`
   默认 `5051`
 
 ## normalization_options
